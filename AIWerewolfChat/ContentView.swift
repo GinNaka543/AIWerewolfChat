@@ -1,24 +1,28 @@
-//
-//  ContentView.swift
-//  AIWerewolfChat
-//
-//  Created by nakajimaginsei on 2025/08/05.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selectedTab = 0
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView(selection: $selectedTab) {
+            HomeView()
+                .tabItem {
+                    Label("ホーム", systemImage: "house.fill")
+                }
+                .tag(0)
+            
+            CharacterView()
+                .tabItem {
+                    Label("キャラ", systemImage: "person.3.fill")
+                }
+                .tag(1)
+            
+            GameLobbyView()
+                .tabItem {
+                    Label("ゲーム", systemImage: "gamecontroller.fill")
+                }
+                .tag(2)
         }
-        .padding()
+        .accentColor(.green)
     }
-}
-
-#Preview {
-    ContentView()
 }
