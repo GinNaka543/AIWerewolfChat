@@ -13,6 +13,26 @@ struct Character: Identifiable, Equatable, Hashable {
     let tags: [CharacterTagType]
     let imageName: String?  // アニメ風画像のファイル名
     
+    // 詳細な人格設定（人狼ゲーム用）
+    var detailedPersonality: CharacterPersonality? {
+        switch name {
+        case "五条悟":
+            return CharacterPersonality.createGojo()
+        case "優しいお姉さん":
+            return CharacterPersonality.createKindSister()
+        case "元気な後輩":
+            return CharacterPersonality.createGenkiKouhai()
+        case "クールな探偵":
+            return CharacterPersonality.createCoolDetective()
+        case "天然系メイド":
+            return CharacterPersonality.createTennenMaid()
+        case "熱血教師":
+            return CharacterPersonality.createHotBloodedTeacher()
+        default:
+            return nil
+        }
+    }
+    
     enum CharacterTagType: String {
         case popular = "人気"
         case talkative = "会話上手"

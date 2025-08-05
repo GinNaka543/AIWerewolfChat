@@ -7,6 +7,7 @@ class GameRoomViewModel: ObservableObject {
     
     private var gameType: GameType?
     private var participants: [Character] = []
+    private var werewolfEngine: WerewolfEngine?
     
     enum GameState {
         case waiting
