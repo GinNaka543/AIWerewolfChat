@@ -9,6 +9,30 @@ struct Character: Identifiable, Equatable, Hashable {
     let emoji: String
     let color: Color
     let description: String
+    let rating: Int
+    let tags: [CharacterTagType]
+    
+    enum CharacterTagType: String {
+        case popular = "人気"
+        case talkative = "会話上手"
+        case funny = "面白い"
+        case smart = "頭脳派"
+        case cute = "かわいい"
+        case cool = "クール"
+        case mysterious = "ミステリアス"
+        
+        var color: Color {
+            switch self {
+            case .popular: return .orange
+            case .talkative: return .blue
+            case .funny: return .yellow
+            case .smart: return .purple
+            case .cute: return .pink
+            case .cool: return .gray
+            case .mysterious: return .indigo
+            }
+        }
+    }
     
     static let sampleCharacters = [
         Character(
@@ -18,7 +42,9 @@ struct Character: Identifiable, Equatable, Hashable {
             catchPhrases: ["僕、最強だから", "大丈夫、なんとかなるって"],
             emoji: "😎",
             color: .blue,
-            description: "呪術高専の教師。最強の呪術師として知られ、生徒思いだが飄々とした態度を取る。"
+            description: "呪術高専の教師。最強の呪術師として知られ、生徒思いだが飄々とした態度を取る。",
+            rating: 5,
+            tags: [.popular, .cool, .smart]
         ),
         Character(
             name: "優しいお姉さん",
@@ -27,7 +53,9 @@ struct Character: Identifiable, Equatable, Hashable {
             catchPhrases: ["大丈夫よ", "頑張ってるね"],
             emoji: "🌸",
             color: .pink,
-            description: "いつも優しく話を聞いてくれる、包容力のあるお姉さんキャラクター。"
+            description: "いつも優しく話を聞いてくれる、包容力のあるお姉さんキャラクター。",
+            rating: 4,
+            tags: [.talkative, .cute]
         ),
         Character(
             name: "元気な後輩",
@@ -36,7 +64,9 @@ struct Character: Identifiable, Equatable, Hashable {
             catchPhrases: ["先輩！", "やったー！"],
             emoji: "✨",
             color: .orange,
-            description: "いつも元気いっぱいで、周りを明るくしてくれる後輩キャラクター。"
+            description: "いつも元気いっぱいで、周りを明るくしてくれる後輩キャラクター。",
+            rating: 4,
+            tags: [.funny, .cute, .talkative]
         ),
         Character(
             name: "クールな探偵",
@@ -45,7 +75,9 @@ struct Character: Identifiable, Equatable, Hashable {
             catchPhrases: ["真実はいつも一つ", "論理的に考えると"],
             emoji: "🔍",
             color: .gray,
-            description: "鋭い洞察力を持つ、クールで論理的な探偵キャラクター。"
+            description: "鋭い洞察力を持つ、クールで論理的な探偵キャラクター。",
+            rating: 5,
+            tags: [.smart, .cool, .mysterious]
         ),
         Character(
             name: "天然系メイド",
@@ -54,7 +86,9 @@ struct Character: Identifiable, Equatable, Hashable {
             catchPhrases: ["ご主人様～", "あわわ..."],
             emoji: "🎀",
             color: .purple,
-            description: "一生懸命だけどドジをしてしまう、愛らしいメイドキャラクター。"
+            description: "一生懸命だけどドジをしてしまう、愛らしいメイドキャラクター。",
+            rating: 3,
+            tags: [.cute, .funny]
         ),
         Character(
             name: "熱血教師",
@@ -63,7 +97,9 @@ struct Character: Identifiable, Equatable, Hashable {
             catchPhrases: ["諦めるな！", "青春だ！"],
             emoji: "🔥",
             color: .red,
-            description: "生徒のことを第一に考える、情熱的な熱血教師キャラクター。"
+            description: "生徒のことを第一に考える、情熱的な熱血教師キャラクター。",
+            rating: 4,
+            tags: [.popular, .funny, .talkative]
         )
     ]
 }
