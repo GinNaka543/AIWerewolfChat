@@ -11,6 +11,7 @@ struct Character: Identifiable, Equatable, Hashable {
     let description: String
     let rating: Int
     let tags: [CharacterTagType]
+    let imageName: String?  // アニメ風画像のファイル名
     
     enum CharacterTagType: String {
         case popular = "人気"
@@ -44,7 +45,8 @@ struct Character: Identifiable, Equatable, Hashable {
             color: .blue,
             description: "呪術高専の教師。最強の呪術師として知られ、生徒思いだが飄々とした態度を取る。",
             rating: 5,
-            tags: [.popular, .cool, .smart]
+            tags: [.popular, .cool, .smart],
+            imageName: nil
         ),
         Character(
             name: "優しいお姉さん",
@@ -55,7 +57,8 @@ struct Character: Identifiable, Equatable, Hashable {
             color: .pink,
             description: "いつも優しく話を聞いてくれる、包容力のあるお姉さんキャラクター。",
             rating: 4,
-            tags: [.talkative, .cute]
+            tags: [.talkative, .cute],
+            imageName: nil
         ),
         Character(
             name: "元気な後輩",
@@ -66,7 +69,8 @@ struct Character: Identifiable, Equatable, Hashable {
             color: .orange,
             description: "いつも元気いっぱいで、周りを明るくしてくれる後輩キャラクター。",
             rating: 4,
-            tags: [.funny, .cute, .talkative]
+            tags: [.funny, .cute, .talkative],
+            imageName: nil
         ),
         Character(
             name: "クールな探偵",
@@ -77,7 +81,8 @@ struct Character: Identifiable, Equatable, Hashable {
             color: .gray,
             description: "鋭い洞察力を持つ、クールで論理的な探偵キャラクター。",
             rating: 5,
-            tags: [.smart, .cool, .mysterious]
+            tags: [.smart, .cool, .mysterious],
+            imageName: nil
         ),
         Character(
             name: "天然系メイド",
@@ -88,7 +93,8 @@ struct Character: Identifiable, Equatable, Hashable {
             color: .purple,
             description: "一生懸命だけどドジをしてしまう、愛らしいメイドキャラクター。",
             rating: 3,
-            tags: [.cute, .funny]
+            tags: [.cute, .funny],
+            imageName: nil
         ),
         Character(
             name: "熱血教師",
@@ -99,7 +105,8 @@ struct Character: Identifiable, Equatable, Hashable {
             color: .red,
             description: "生徒のことを第一に考える、情熱的な熱血教師キャラクター。",
             rating: 4,
-            tags: [.popular, .funny, .talkative]
+            tags: [.popular, .funny, .talkative],
+            imageName: nil
         )
     ]
 }

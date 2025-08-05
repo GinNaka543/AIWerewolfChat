@@ -1,28 +1,43 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selectedTab = 0
+    @State private var selectedTab = 1
     
     var body: some View {
         TabView(selection: $selectedTab) {
             HomeView()
                 .tabItem {
-                    Label("ホーム", systemImage: "house.fill")
+                    VStack(spacing: 4) {
+                        Image(systemName: selectedTab == 0 ? "house.fill" : "house")
+                            .font(.system(size: 22))
+                        Text("Home")
+                            .font(.system(size: 10))
+                    }
                 }
                 .tag(0)
             
             CharacterView()
                 .tabItem {
-                    Label("キャラ", systemImage: "person.3.fill")
+                    VStack(spacing: 4) {
+                        Image(systemName: selectedTab == 1 ? "person.2.fill" : "person.2")
+                            .font(.system(size: 22))
+                        Text("Character")
+                            .font(.system(size: 10))
+                    }
                 }
                 .tag(1)
             
             GameLobbyView()
                 .tabItem {
-                    Label("ゲーム", systemImage: "gamecontroller.fill")
+                    VStack(spacing: 4) {
+                        Image(systemName: selectedTab == 2 ? "gamecontroller.fill" : "gamecontroller")
+                            .font(.system(size: 22))
+                        Text("Game")
+                            .font(.system(size: 10))
+                    }
                 }
                 .tag(2)
         }
-        .accentColor(.green)
+        .accentColor(.blue)
     }
 }
