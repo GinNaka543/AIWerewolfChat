@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		CC12D7F92E425D5F00EDBCFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CC12D7E32E425D5D00EDBCFB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CC12D7EA2E425D5D00EDBCFB;
+			remoteInfo = AIWerewolfChat;
+		};
+		CC12D8032E425D5F00EDBCFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CC12D7E32E425D5D00EDBCFB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CC12D7EA2E425D5D00EDBCFB;
+			remoteInfo = AIWerewolfChat;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CC12D7EB2E425D5D00EDBCFB /* AIWerewolfChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIWerewolfChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC12D7F82E425D5F00EDBCFB /* AIWerewolfChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AIWerewolfChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC12D8022E425D5F00EDBCFB /* AIWerewolfChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AIWerewolfChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		CC12D7ED2E425D5D00EDBCFB /* AIWerewolfChat */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = AIWerewolfChat;
+			sourceTree = "<group>";
+		};
+		CC12D7FB2E425D5F00EDBCFB /* AIWerewolfChatTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = AIWerewolfChatTests;
+			sourceTree = "<group>";
+		};
+		CC12D8052E425D5F00EDBCFB /* AIWerewolfChatUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = AIWerewolfChatUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CC12D7E82E425D5D00EDBCFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC12D7F52E425D5F00EDBCFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC12D7FF2E425D5F00EDBCFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CC12D7E22E425D5D00EDBCFB = {
+			isa = PBXGroup;
+			children = (
+				CC12D7ED2E425D5D00EDBCFB /* AIWerewolfChat */,
+				CC12D7FB2E425D5F00EDBCFB /* AIWerewolfChatTests */,
+				CC12D8052E425D5F00EDBCFB /* AIWerewolfChatUITests */,
+				CC12D7EC2E425D5D00EDBCFB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CC12D7EC2E425D5D00EDBCFB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CC12D7EB2E425D5D00EDBCFB /* AIWerewolfChat.app */,
+				CC12D7F82E425D5F00EDBCFB /* AIWerewolfChatTests.xctest */,
+				CC12D8022E425D5F00EDBCFB /* AIWerewolfChatUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CC12D7EA2E425D5D00EDBCFB /* AIWerewolfChat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC12D80C2E425D5F00EDBCFB /* Build configuration list for PBXNativeTarget "AIWerewolfChat" */;
+			buildPhases = (
+				CC12D7E72E425D5D00EDBCFB /* Sources */,
+				CC12D7E82E425D5D00EDBCFB /* Frameworks */,
+				CC12D7E92E425D5D00EDBCFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				CC12D7ED2E425D5D00EDBCFB /* AIWerewolfChat */,
+			);
+			name = AIWerewolfChat;
+			packageProductDependencies = (
+			);
+			productName = AIWerewolfChat;
+			productReference = CC12D7EB2E425D5D00EDBCFB /* AIWerewolfChat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CC12D7F72E425D5F00EDBCFB /* AIWerewolfChatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC12D80F2E425D5F00EDBCFB /* Build configuration list for PBXNativeTarget "AIWerewolfChatTests" */;
+			buildPhases = (
+				CC12D7F42E425D5F00EDBCFB /* Sources */,
+				CC12D7F52E425D5F00EDBCFB /* Frameworks */,
+				CC12D7F62E425D5F00EDBCFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CC12D7FA2E425D5F00EDBCFB /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				CC12D7FB2E425D5F00EDBCFB /* AIWerewolfChatTests */,
+			);
+			name = AIWerewolfChatTests;
+			packageProductDependencies = (
+			);
+			productName = AIWerewolfChatTests;
+			productReference = CC12D7F82E425D5F00EDBCFB /* AIWerewolfChatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CC12D8012E425D5F00EDBCFB /* AIWerewolfChatUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC12D8122E425D5F00EDBCFB /* Build configuration list for PBXNativeTarget "AIWerewolfChatUITests" */;
+			buildPhases = (
+				CC12D7FE2E425D5F00EDBCFB /* Sources */,
+				CC12D7FF2E425D5F00EDBCFB /* Frameworks */,
+				CC12D8002E425D5F00EDBCFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CC12D8042E425D5F00EDBCFB /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				CC12D8052E425D5F00EDBCFB /* AIWerewolfChatUITests */,
+			);
+			name = AIWerewolfChatUITests;
+			packageProductDependencies = (
+			);
+			productName = AIWerewolfChatUITests;
+			productReference = CC12D8022E425D5F00EDBCFB /* AIWerewolfChatUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CC12D7E32E425D5D00EDBCFB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					CC12D7EA2E425D5D00EDBCFB = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					CC12D7F72E425D5F00EDBCFB = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = CC12D7EA2E425D5D00EDBCFB;
+					};
+					CC12D8012E425D5F00EDBCFB = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = CC12D7EA2E425D5D00EDBCFB;
+					};
+				};
+			};
+			buildConfigurationList = CC12D7E62E425D5D00EDBCFB /* Build configuration list for PBXProject "AIWerewolfChat" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CC12D7E22E425D5D00EDBCFB;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = CC12D7EC2E425D5D00EDBCFB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CC12D7EA2E425D5D00EDBCFB /* AIWerewolfChat */,
+				CC12D7F72E425D5F00EDBCFB /* AIWerewolfChatTests */,
+				CC12D8012E425D5F00EDBCFB /* AIWerewolfChatUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CC12D7E92E425D5D00EDBCFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC12D7F62E425D5F00EDBCFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC12D8002E425D5F00EDBCFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CC12D7E72E425D5D00EDBCFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC12D7F42E425D5F00EDBCFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC12D7FE2E425D5F00EDBCFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CC12D7FA2E425D5F00EDBCFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CC12D7EA2E425D5D00EDBCFB /* AIWerewolfChat */;
+			targetProxy = CC12D7F92E425D5F00EDBCFB /* PBXContainerItemProxy */;
+		};
+		CC12D8042E425D5F00EDBCFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CC12D7EA2E425D5D00EDBCFB /* AIWerewolfChat */;
+			targetProxy = CC12D8032E425D5F00EDBCFB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		CC12D80A2E425D5F00EDBCFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 86452XMRK8;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CC12D80B2E425D5F00EDBCFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 86452XMRK8;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CC12D80D2E425D5F00EDBCFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 86452XMRK8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Ginsei.AIWerewolfChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CC12D80E2E425D5F00EDBCFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 86452XMRK8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Ginsei.AIWerewolfChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CC12D8102E425D5F00EDBCFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 86452XMRK8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Ginsei.AIWerewolfChatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AIWerewolfChat.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AIWerewolfChat";
+			};
+			name = Debug;
+		};
+		CC12D8112E425D5F00EDBCFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 86452XMRK8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Ginsei.AIWerewolfChatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AIWerewolfChat.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AIWerewolfChat";
+			};
+			name = Release;
+		};
+		CC12D8132E425D5F00EDBCFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 86452XMRK8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Ginsei.AIWerewolfChatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AIWerewolfChat;
+			};
+			name = Debug;
+		};
+		CC12D8142E425D5F00EDBCFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 86452XMRK8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Ginsei.AIWerewolfChatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AIWerewolfChat;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CC12D7E62E425D5D00EDBCFB /* Build configuration list for PBXProject "AIWerewolfChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC12D80A2E425D5F00EDBCFB /* Debug */,
+				CC12D80B2E425D5F00EDBCFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CC12D80C2E425D5F00EDBCFB /* Build configuration list for PBXNativeTarget "AIWerewolfChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC12D80D2E425D5F00EDBCFB /* Debug */,
+				CC12D80E2E425D5F00EDBCFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CC12D80F2E425D5F00EDBCFB /* Build configuration list for PBXNativeTarget "AIWerewolfChatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC12D8102E425D5F00EDBCFB /* Debug */,
+				CC12D8112E425D5F00EDBCFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CC12D8122E425D5F00EDBCFB /* Build configuration list for PBXNativeTarget "AIWerewolfChatUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC12D8132E425D5F00EDBCFB /* Debug */,
+				CC12D8142E425D5F00EDBCFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CC12D7E32E425D5D00EDBCFB /* Project object */;
+}
