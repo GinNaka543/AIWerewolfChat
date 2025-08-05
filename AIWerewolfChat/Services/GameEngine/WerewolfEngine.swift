@@ -33,7 +33,7 @@ class WerewolfEngine: ObservableObject {
         let userPlayer = WerewolfPlayer(
             id: UUID(),
             character: userCharacter,
-            personality: CharacterPersonality.createGojo(), // TODO: キャラクターごとの性格を設定
+            personality: userCharacter.detailedPersonality ?? CharacterPersonality.createGojo(),
             role: roles[0],
             isUser: true
         )
@@ -44,7 +44,7 @@ class WerewolfEngine: ObservableObject {
             let player = WerewolfPlayer(
                 id: UUID(),
                 character: character,
-                personality: CharacterPersonality.createGojo(), // TODO: キャラクターごとの性格を設定
+                personality: character.detailedPersonality ?? CharacterPersonality.createGojo(),
                 role: roles[index + 1],
                 isUser: false
             )

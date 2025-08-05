@@ -8,6 +8,7 @@ class GameRoomViewModel: ObservableObject {
     private var gameType: GameType?
     private var participants: [Character] = []
     private var werewolfEngine: WerewolfEngine?
+    private var cancellables = Set<AnyCancellable>()
     
     enum GameState {
         case waiting
@@ -17,33 +18,72 @@ class GameRoomViewModel: ObservableObject {
     
     func startGame(type: GameType) {
         self.gameType = type
+        self.gameState = .playing
         
-        // ゲーム開始のメッセージ
+        switch type {
+        case .werewolf:
+            startWerewolfGame()
+        case .sanRentan:
+            startSanRentanGame()
+        case .ito:
+            startItoGame()
+        }
+    }
+    
+    private func startWerewolfGame() {
+        // 人狼エンジンを初期化
+        werewolfEngine = WerewolfEngine()
+        
+        // エンジンのメッセージを購読
+        werewolfEngine?.$messages
+            .sink { [weak self] messages in
+                self?.messages = messages
+            }
+            .store(in: &cancellables)
+        
+        // キャラクターを選択（デモ用にランダム選択）
+        let allCharacters = Character.sampleCharacters
+        let selectedCharacters = Array(allCharacters.shuffled().prefix(7))
+        let userCharacter = allCharacters.randomElement()!
+        
+        // ゲーム開始
+        werewolfEngine?.startGame(with: selectedCharacters, userCharacter: userCharacter)
+    }
+    
+    private func startSanRentanGame() {
+        // サンレンタンゲーム開始のメッセージ
         let systemMessage = Message(
-            content: "ゲームを開始します！\n\(type.title)のルールに従って進行します。",
+            content: "サンレンタンゲームを開始します！\n順番に言葉をつないでいきましょう。",
             character: nil,
             isUser: false
         )
         messages.append(systemMessage)
         
-        // デモ用の初期メッセージ
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            let welcomeMessage = Message(
-                content: "みなさん、よろしくお願いします！",
-                character: Character.sampleCharacters[0],
-                isUser: false
-            )
-            self.messages.append(welcomeMessage)
-        }
+        // TODO: サンレンタンゲームの実装
+    }
+    
+    private func startItoGame() {
+        // itoゲーム開始のメッセージ
+        let systemMessage = Message(
+            content: "itoゲームを開始します！\n数字を当てずに順番を当てましょう。",
+            character: nil,
+            isUser: false
+        )
+        messages.append(systemMessage)
+        
+        // TODO: itoゲームの実装
     }
     
     func sendMessage(_ text: String) {
-        // ユーザーのメッセージを追加
-        let userMessage = Message(content: text, isUser: true)
-        messages.append(userMessage)
-        
-        // デモ用のAI応答
-        simulateAIResponse(to: text)
+        if gameType == .werewolf, let engine = werewolfEngine {
+            // 人狼ゲームの場合はエンジンに委譲
+            engine.userSendMessage(text)
+        } else {
+            // その他のゲームの場合は従来の処理
+            let userMessage = Message(content: text, isUser: true)
+            messages.append(userMessage)
+            simulateAIResponse(to: text)
+        }
     }
     
     private func simulateAIResponse(to userMessage: String) {
