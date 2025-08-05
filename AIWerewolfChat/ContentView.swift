@@ -7,37 +7,28 @@ struct ContentView: View {
         TabView(selection: $selectedTab) {
             HomeView()
                 .tabItem {
-                    VStack(spacing: 4) {
-                        Image(systemName: selectedTab == 0 ? "house.fill" : "house")
-                            .font(.system(size: 22))
-                        Text("Home")
-                            .font(.system(size: 10))
-                    }
+                    Label("Home", systemImage: "house")
                 }
                 .tag(0)
             
             CharacterView()
                 .tabItem {
-                    VStack(spacing: 4) {
-                        Image(systemName: selectedTab == 1 ? "person.2.fill" : "person.2")
-                            .font(.system(size: 22))
-                        Text("Character")
-                            .font(.system(size: 10))
-                    }
+                    Label("Character", systemImage: "person.2")
                 }
                 .tag(1)
             
             GameLobbyView()
                 .tabItem {
-                    VStack(spacing: 4) {
-                        Image(systemName: selectedTab == 2 ? "gamecontroller.fill" : "gamecontroller")
-                            .font(.system(size: 22))
-                        Text("Game")
-                            .font(.system(size: 10))
-                    }
+                    Label("Game", systemImage: "gamecontroller")
                 }
                 .tag(2)
         }
         .accentColor(.blue)
+        .onAppear {
+            // TabBarの背景を白に設定
+            let appearance = UITabBar.appearance()
+            appearance.backgroundColor = .white
+            appearance.barTintColor = .white
+        }
     }
 }
