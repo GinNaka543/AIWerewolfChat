@@ -45,6 +45,11 @@ struct CharacterView: View {
                     .padding(.bottom, 16)
                     .background(Color.white)
                     
+                    // キャラクター紹介プレビュー
+                    CharacterIntroductionPreview()
+                        .padding(.horizontal, 16)
+                        .padding(.bottom, 16)
+                    
                     // キャラクターリスト（線なし、連続したリスト）
                     ScrollView {
                         VStack(spacing: 0) {
