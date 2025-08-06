@@ -1,5 +1,6 @@
 import SwiftUI
 import PhotosUI
+import Foundation
 
 struct AddCharacterModal: View {
     @Binding var isPresented: Bool
@@ -18,23 +19,26 @@ struct AddCharacterModal: View {
     
     // 性格・話し方
     @State private var personality = ""
-    @State private var speechStyle = ""
+    @State private var speechStyle = "casual"  // casual, polite, formal, archaic
     @State private var firstPersons = ""  // カンマ区切り
     @State private var secondPersons = ""  // カンマ区切り
     @State private var catchPhrases = ""  // カンマ区切り
     @State private var sentenceEndings = ""  // カンマ区切り
+    @State private var laughStyle = ""  // 笑い方
+    @State private var fillerWords = ""  // 感嘆詞
     
     // タグ
     @State private var selectedTags: Set<Character.CharacterTagType> = []
     
     // 詳細設定（折りたたみ可能）
     @State private var showAdvancedSettings = false
-    @State private var laughStyle = ""
-    @State private var fillerWords = ""
     @State private var coreValues = ""
     @State private var likes = ""
     @State private var dislikes = ""
     @State private var fears = ""
+    @State private var dialect = ""
+    @State private var reasoningStyle = ""
+    @State private var nervousHabits = ""
     
     var body: some View {
         NavigationStack {
@@ -93,26 +97,54 @@ struct AddCharacterModal: View {
                         .lineLimit(2...4)
                 }
                 
-                // 性格・話し方セクション
-                Section("性格・話し方") {
-                    TextField("性格（例：優しくて包容力がある）", text: $personality)
-                    TextField("話し方の特徴（例：丁寧で温かい口調）", text: $speechStyle)
-                    TextField("一人称（カンマ区切り）", text: $firstPersons)
-                        .placeholder(when: firstPersons.isEmpty) {
-                            Text("例: 私, わたし").foregroundColor(.gray)
-                        }
-                    TextField("二人称（カンマ区切り）", text: $secondPersons)
-                        .placeholder(when: secondPersons.isEmpty) {
-                            Text("例: あなた, 君").foregroundColor(.gray)
-                        }
-                    TextField("口癖・決め台詞（カンマ区切り）", text: $catchPhrases)
-                        .placeholder(when: catchPhrases.isEmpty) {
-                            Text("例: 大丈夫よ, 頑張ってるね").foregroundColor(.gray)
-                        }
-                    TextField("語尾（カンマ区切り）", text: $sentenceEndings)
-                        .placeholder(when: sentenceEndings.isEmpty) {
-                            Text("例: だよ, だね, かな").foregroundColor(.gray)
-                        }
+                // 話し方の基本セクション
+                Section("話し方の基本") {
+                    HStack {
+                        Text("一人称")
+                            .frame(width: 80, alignment: .leading)
+                            .foregroundColor(.secondary)
+                        TextField("私, わたし, 僕, 俺, あたし", text: $firstPersons)
+                    }
+                    
+                    HStack {
+                        Text("二人称")
+                            .frame(width: 80, alignment: .leading)
+                            .foregroundColor(.secondary)
+                        TextField("あなた, 君, お前, ～さん", text: $secondPersons)
+                    }
+                    
+                    HStack {
+                        Text("語尾")
+                            .frame(width: 80, alignment: .leading)
+                            .foregroundColor(.secondary)
+                        TextField("だよ, だね, です, にゃん, でござる", text: $sentenceEndings)
+                    }
+                }
+                
+                // 性格・感情表現セクション
+                Section("性格・感情表現") {
+                    TextField("基本的な性格（例：優しくて包容力がある）", text: $personality)
+                    
+                    HStack {
+                        Text("笑い方")
+                            .frame(width: 80, alignment: .leading)
+                            .foregroundColor(.secondary)
+                        TextField("あはは, ふふっ, くくく, にひひ", text: $laughStyle)
+                    }
+                    
+                    HStack {
+                        Text("感嘆詞")
+                            .frame(width: 80, alignment: .leading)
+                            .foregroundColor(.secondary)
+                        TextField("わー, きゃー, おお, ふむ, あら", text: $fillerWords)
+                    }
+                    
+                    HStack {
+                        Text("口癖")
+                            .frame(width: 80, alignment: .leading)
+                            .foregroundColor(.secondary)
+                        TextField("なのだ, ～的な, というか", text: $catchPhrases)
+                    }
                 }
                 
                 // タグ選択セクション
@@ -133,18 +165,59 @@ struct AddCharacterModal: View {
                 // 詳細設定セクション（折りたたみ可能）
                 Section {
                     DisclosureGroup("詳細設定", isExpanded: $showAdvancedSettings) {
-                        TextField("笑い方（カンマ区切り）", text: $laughStyle)
-                            .placeholder(when: laughStyle.isEmpty) {
-                                Text("例: ふふっ, あはは").foregroundColor(.gray)
+                        VStack(alignment: .leading, spacing: 16) {
+                            Text("特殊な話し方")
+                                .font(.headline)
+                            
+                            HStack {
+                                Text("敬語レベル")
+                                    .frame(width: 100, alignment: .leading)
+                                    .foregroundColor(.secondary)
+                                Picker("", selection: $speechStyle) {
+                                    Text("タメ口").tag("casual")
+                                    Text("丁寧語").tag("polite")
+                                    Text("敬語").tag("formal")
+                                    Text("古風").tag("archaic")
+                                }
+                                .pickerStyle(SegmentedPickerStyle())
                             }
-                        TextField("つなぎ言葉（カンマ区切り）", text: $fillerWords)
-                            .placeholder(when: fillerWords.isEmpty) {
-                                Text("例: えっと, まあ, その").foregroundColor(.gray)
+                            
+                            HStack {
+                                Text("方言")
+                                    .frame(width: 100, alignment: .leading)
+                                    .foregroundColor(.secondary)
+                                TextField("関西弁, 東北弁, なし", text: $dialect)
                             }
-                        TextField("大切にしている価値観（カンマ区切り）", text: $coreValues)
-                        TextField("好きなもの（カンマ区切り）", text: $likes)
-                        TextField("嫌いなもの（カンマ区切り）", text: $dislikes)
-                        TextField("恐れているもの（カンマ区切り）", text: $fears)
+                            
+                            Divider()
+                            
+                            Text("価値観・好み")
+                                .font(.headline)
+                            
+                            TextField("大切にしている価値観", text: $coreValues)
+                            TextField("好きなもの", text: $likes)
+                            TextField("嫌いなもの", text: $dislikes)
+                            TextField("恐れているもの", text: $fears)
+                            
+                            Divider()
+                            
+                            Text("人狼ゲーム時の特徴")
+                                .font(.headline)
+                            
+                            HStack {
+                                Text("推理スタイル")
+                                    .frame(width: 100, alignment: .leading)
+                                    .foregroundColor(.secondary)
+                                TextField("論理的, 直感的, 感情的", text: $reasoningStyle)
+                            }
+                            
+                            HStack {
+                                Text("緊張時の癖")
+                                    .frame(width: 100, alignment: .leading)
+                                    .foregroundColor(.secondary)
+                                TextField("どもる, 早口になる, 沈黙する", text: $nervousHabits)
+                            }
+                        }
                     }
                 }
             }
@@ -173,12 +246,25 @@ struct AddCharacterModal: View {
         let secondPersonArray = secondPersons.split(separator: ",").map { $0.trimmingCharacters(in: .whitespaces) }
         let catchPhrasesArray = catchPhrases.split(separator: ",").map { $0.trimmingCharacters(in: .whitespaces) }
         let sentenceEndingsArray = sentenceEndings.split(separator: ",").map { $0.trimmingCharacters(in: .whitespaces) }
+        let laughStyleArray = laughStyle.split(separator: ",").map { $0.trimmingCharacters(in: .whitespaces) }
+        let fillerWordsArray = fillerWords.split(separator: ",").map { $0.trimmingCharacters(in: .whitespaces) }
+        
+        // 話し方スタイルの変換
+        let speechStyleText: String = {
+            switch speechStyle {
+            case "casual": return "カジュアルな口調"
+            case "polite": return "丁寧な口調"
+            case "formal": return "敬語を使う口調"
+            case "archaic": return "古風な口調"
+            default: return "普通の口調"
+            }
+        }()
         
         // 新しいキャラクターを作成
         let newCharacter = Character(
             name: name,
             personality: personality.isEmpty ? "個性的" : personality,
-            speechStyle: speechStyle.isEmpty ? "普通の口調" : speechStyle,
+            speechStyle: speechStyleText,
             catchPhrases: catchPhrasesArray.isEmpty ? ["よろしく"] : catchPhrasesArray,
             emoji: "🙂",  // デフォルト絵文字
             color: .blue,  // デフォルトカラー
@@ -189,10 +275,8 @@ struct AddCharacterModal: View {
             customImage: selectedImage
         )
         
-        // カスタムキャラクターの詳細性格情報を作成
-        if !firstPersonArray.isEmpty || !secondPersonArray.isEmpty {
-            // TODO: カスタムキャラクターの詳細性格情報を保存する仕組みを実装
-        }
+        // TODO: カスタムキャラクターの詳細性格情報（一人称、二人称、語尾、笑い方など）を
+        // CharacterPersonalityとして保存する仕組みを実装
         
         // CharacterStoreに追加
         characterStore.addCustomCharacter(newCharacter)
@@ -221,16 +305,4 @@ struct TagToggleButton: View {
     }
 }
 
-// プレースホルダー用のView拡張
-extension View {
-    func placeholder<Content: View>(
-        when shouldShow: Bool,
-        alignment: Alignment = .leading,
-        @ViewBuilder placeholder: () -> Content) -> some View {
-        
-        ZStack(alignment: alignment) {
-            placeholder().opacity(shouldShow ? 1 : 0)
-            self
-        }
-    }
-}
+// プレースホルダー用のView拡張は削除（重なり問題の原因）
