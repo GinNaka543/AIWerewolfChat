@@ -95,7 +95,7 @@ struct GameTypeSelectionView: View {
 struct GroupSelectionView: View {
     let gameType: GameType
     let onStartGame: () -> Void
-    @State private var selectedCharacters: Set<Character> = []
+    @State private var selectedCharacters: [Character] = []
     
     var body: some View {
         VStack(spacing: 20) {
@@ -117,12 +117,12 @@ struct GroupSelectionView: View {
                     ForEach(Character.sampleCharacters) { character in
                         CharacterSelectionCard(
                             character: character,
-                            isSelected: selectedCharacters.contains(character)
+                            isSelected: selectedCharacters.contains(where: { $0.id == character.id })
                         ) {
-                            if selectedCharacters.contains(character) {
-                                selectedCharacters.remove(character)
+                            if let index = selectedCharacters.firstIndex(where: { $0.id == character.id }) {
+                                selectedCharacters.remove(at: index)
                             } else if selectedCharacters.count < gameType.maxPlayers {
-                                selectedCharacters.insert(character)
+                                selectedCharacters.append(character)
                             }
                         }
                     }

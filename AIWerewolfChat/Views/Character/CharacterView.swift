@@ -1,9 +1,9 @@
 import SwiftUI
 
 struct CharacterView: View {
+    @StateObject private var characterStore = CharacterStore()
     @State private var selectedCharacter: Character?
-    
-    let characters = Character.sampleCharacters
+    @State private var showingAddCharacterModal = false
     
     var body: some View {
         NavigationStack {
@@ -30,7 +30,9 @@ struct CharacterView: View {
                         Spacer()
                         
                         // Add Characterボタン
-                        Button(action: {}) {
+                        Button(action: {
+                            showingAddCharacterModal = true
+                        }) {
                             Text("Add Character")
                                 .font(.system(size: 16, weight: .semibold))
                                 .foregroundColor(.white)
@@ -53,7 +55,7 @@ struct CharacterView: View {
                     // キャラクターリスト（線なし、連続したリスト）
                     ScrollView {
                         VStack(spacing: 0) {
-                            ForEach(characters) { character in
+                            ForEach(characterStore.allCharacters) { character in
                                 CharacterRow(character: character) {
                                     selectedCharacter = character
                                 }
@@ -65,6 +67,9 @@ struct CharacterView: View {
             .navigationBarHidden(true)
             .sheet(item: $selectedCharacter) { character in
                 CharacterDetailView(character: character)
+            }
+            .sheet(isPresented: $showingAddCharacterModal) {
+                AddCharacterModal(isPresented: $showingAddCharacterModal, characterStore: characterStore)
             }
         }
     }

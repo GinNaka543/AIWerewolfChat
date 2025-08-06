@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct Character: Identifiable, Equatable, Hashable {
+struct Character: Identifiable, Equatable {
     let id = UUID()
     let name: String
     let personality: String
@@ -12,6 +12,23 @@ struct Character: Identifiable, Equatable, Hashable {
     let rating: Int
     let tags: [CharacterTagType]
     let imageName: String?  // アニメ風画像のファイル名
+    let customImage: UIImage?  // カスタムキャラクターの画像
+    
+    init(name: String, personality: String, speechStyle: String, catchPhrases: [String], 
+         emoji: String, color: Color, description: String, rating: Int, 
+         tags: [CharacterTagType], imageName: String? = nil, customImage: UIImage? = nil) {
+        self.name = name
+        self.personality = personality
+        self.speechStyle = speechStyle
+        self.catchPhrases = catchPhrases
+        self.emoji = emoji
+        self.color = color
+        self.description = description
+        self.rating = rating
+        self.tags = tags
+        self.imageName = imageName
+        self.customImage = customImage
+    }
     
     // 詳細な人格設定（人狼ゲーム用）
     var detailedPersonality: CharacterPersonality? {
@@ -33,7 +50,7 @@ struct Character: Identifiable, Equatable, Hashable {
         }
     }
     
-    enum CharacterTagType: String {
+    enum CharacterTagType: String, CaseIterable {
         case popular = "人気"
         case talkative = "会話上手"
         case funny = "面白い"
