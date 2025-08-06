@@ -31,6 +31,7 @@ struct CharacterView: View {
                         
                         // Add Characterボタン
                         Button(action: {
+                            print("Add Character button pressed")
                             showingAddCharacterModal = true
                         }) {
                             Text("Add Character")
@@ -41,11 +42,13 @@ struct CharacterView: View {
                                 .background(Color(red: 0.6, green: 0.4, blue: 0.8))
                                 .cornerRadius(20)
                         }
+                        .buttonStyle(PlainButtonStyle())
                         .padding(.trailing, 16)
                     }
                     .padding(.top, 8)
                     .padding(.bottom, 16)
                     .background(Color.white)
+                    .zIndex(1)  // ヘッダーを前面に配置
                     
                     // キャラクター紹介プレビュー
                     CharacterIntroductionPreview()

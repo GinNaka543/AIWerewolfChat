@@ -37,13 +37,8 @@ struct TopRoundedRectangle: Shape {
 }
 
 struct CharacterIntroductionPreview: View {
-    @State private var isPressed = false
-    
     var body: some View {
-        Button(action: {
-            // プレビューがタップされた時のアクション
-        }) {
-            ZStack {
+        ZStack {
             // カスタムシェイプ（上部のみ角丸）
             TopRoundedRectangle(cornerRadius: 12)
                 .fill(Color.white)
@@ -97,16 +92,7 @@ struct CharacterIntroductionPreview: View {
                 .clipped()
             }
         }
-        }
         .frame(height: 180)
-        .buttonStyle(PlainButtonStyle())
-        .scaleEffect(isPressed ? 0.98 : 1.0)
-        .onLongPressGesture(minimumDuration: 0.1, maximumDistance: .infinity, pressing: { pressing in
-            withAnimation(.easeInOut(duration: 0.1)) {
-                isPressed = pressing
-            }
-        }) {
-            // タップ完了時
-        }
+        .allowsHitTesting(false)  // タップを無効化
     }
 }
